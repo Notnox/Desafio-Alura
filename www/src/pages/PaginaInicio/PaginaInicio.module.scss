@@ -1,0 +1,220 @@
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 15%;
+    margin-top: 120px;
+    max-width: 480px;
+    font-style: normal;
+    color: #202020;
+    &__h3 {
+        font-family: 'Montserrat';
+        opacity: 0.5;
+    }
+    &__h1 {
+        font-family: 'Elsie Swash Caps';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 52pt;
+        margin: 0;
+    }
+    &__h2 {
+        font-family: 'Montserrat';
+        opacity: 0.5;
+        font-size: 12pt;
+        line-height: 1.8;
+    }
+    &__box {
+        display: flex;
+        width: 640px;
+        background: #FFFFFF;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+        &__submit {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            opacity: 0.5;
+            line-height: 20px;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+            &__input {
+                width: 320px;
+                font-size: 16px;
+                color: #202020;
+                padding: 10px;
+                border: none;
+            }
+            &__botao--ativo {
+                width: 300px;
+                height: 80px;
+                font-size: 18px;
+                background: #FFCB47;
+                opacity: 1;
+                color: white;
+                border: none;
+                cursor: pointer;
+                transition-duration: 0.4s;
+            }
+            &__botao--ativo:hover {
+                background: #98792a;
+            }
+            &__botao--desativado {
+                width: 300px;
+                height: 80px;
+                font-size: 18px;
+                background: #a39c8c;
+                opacity: 1;
+                color: white;
+                border: none;
+            }
+        }
+    }
+}
+
+.section {
+    display: flex;
+    width: 800px;
+    flex-direction: row;
+    background: #FFFFFF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    margin: auto;
+    margin-top: 275px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    color: #202020;
+    &__imagem {
+        width: 450px;
+        height: 400px;
+    }
+    &__box {
+        display: flex;
+        flex-direction: column;
+        padding-top: 25px;
+        padding-left: 30px;
+        &__h2 {
+            font-family: 'Elsie Swash Caps';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 35px;
+            margin-bottom: 30px;
+        }
+        &__h3 {
+            font-size: 18px;
+            line-height: 27px;
+            opacity: 0.5;
+            margin-bottom: 10px;
+        }
+        &__passo {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            margin-bottom: 25px;
+            &__texto {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 27px;
+                color: #202020;
+                opacity: 0.5;
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+.ofertas {
+    display: flex;
+    width: 1000px;
+    flex-direction: column;
+    align-items: center;
+    color: #202020;
+    margin: auto;
+    margin-bottom: 80px;
+    margin-top: 30px;
+    &__h3 {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 27px;
+        opacity: 0.5;
+        margin: 0;
+    }
+    &__h2 {
+        font-family: 'Elsie Swash Caps';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 54px;
+        line-height: 94px;
+        margin: 0;
+    }
+    &__box {
+        display: flex;
+        flex-wrap: wrap;
+        &__planta {
+            display: flex;
+            width: 248px;
+            flex-direction: row;
+            background: #FFFFFF;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+            margin-left: 60px;
+            margin-bottom: 20px;
+            &__imagem {
+                width: 50%;
+                height: 124px;
+            }
+            &__detalhes {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                
+                &__nome {
+                    font-family: 'Elsie Swash Caps';
+                    font-style: normal;
+                    font-weight: 900;
+                    font-size: 24px;
+                    line-height: 27px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    color: #202020;
+                    margin: 0;
+                }
+                &__valor {
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    padding-bottom: 5px;
+                    color: #202020;
+                    opacity: 0.5;
+                    margin: 0;
+                }
+                &__comprar {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-right: 30px;
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 20px;
+                    margin-bottom: 10px;
+                    color: #FFCB47;
+                    cursor: pointer;
+                    transition-duration: 0.4s;
+                }
+                &__comprar:hover {
+                    color: #98792a;
+                }
+            }
+        }
+    }
+}
