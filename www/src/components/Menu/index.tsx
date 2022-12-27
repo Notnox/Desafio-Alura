@@ -1,3 +1,4 @@
+import React from 'react';
 import { ReactComponent as Logo } from 'assets/img/logo.svg';
 import styles from './Menu.module.scss';
 

@@ -1,64 +1,35 @@
+import React, { useEffect } from 'react';
 import Menu from 'components/Menu';
 import styles from './PaginaInicio.module.scss';
 import { ReactComponent as Elipse } from 'assets/img/ellipse.svg';
 import { AiFillMail, AiOutlineArrowRight } from 'react-icons/ai';
 import classNames from 'classnames';
 import { useState } from 'react';
+import { Plantas } from 'data/Plantas';
+import { PassosParaComprar } from 'data/PassosParaComprar';
+import { IPlanta } from 'styles/interfaces/IPlanta';
+import { validateEmail } from 'utils/Email';
 
-interface IPlanta {
-	'id': number;
-    'nome': string;
-    'valor': string;
-    'imagem': string
-}
 
 const PaginaInicio = () => {
 	const [email, setEmail] = useState<string>('');
-	const passos = [
-		'Escolha suas plantas',
-		'Faça seu pedido',
-		'Aguarde na sua casa'
-	];
-	const plantas: IPlanta[] = [
-		{
-			'id': 1,
-			'nome': 'Ajuga reptans',
-			'valor': '20',
-			'imagem': '/assets/img/produto1.png'
-		},
-		{
-			'id': 2,
-			'nome': 'Cordyline fruticosa',
-			'valor': '20',
-			'imagem': '/assets/img/produto2.png'
-		},
-		{
-			'id': 3,
-			'nome': 'Crassula ovata',
-			'valor': '20',
-			'imagem': '/assets/img/produto3.png'
-		},
-		{
-			'id': 4,
-			'nome': 'Cyperus rotundus',
-			'valor': '20',
-			'imagem': '/assets/img/produto4.png'
-		},{
-			'id': 5,
-			'nome': 'Delairea odorata',
-			'valor': '20',
-			'imagem': '/assets/img/produto5.png'
-		},{
-			'id': 6,
-			'nome': 'Datura metel',
-			'valor': '20',
-			'imagem': '/assets/img/produto6.png'
-		}
-	];
+	const [emailValido, setEmailValido] = useState<boolean>(false);
+
+	useEffect(() => {
+		setEmailValido(validateEmail(email));
+	}, [email])
+	const passos: string[] = PassosParaComprar;
+	const plantas: IPlanta[] = Plantas;
+
+	const cadastrarEmail = (evento: React.FormEvent<HTMLFormElement>) => {
+		evento.preventDefault();
+		alert(`Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`);
+		setEmail('');
+	}
 	return (
 		<>
 			<Menu />
-			<form className={styles.form}>
+			<form className={styles.form} onSubmit={cadastrarEmail}>
 				<h3 className={styles.form__h3}>Sua casa com as</h3>
 				<h1 className={styles.form__h1}>melhores plantas</h1>
 				<h2 className={styles.form__h2}>
@@ -79,10 +50,10 @@ const PaginaInicio = () => {
 					</div>
 					<button 
 						className={classNames({
-							[styles['form__box__submit__botao--ativo']]: email,
-							[styles['form__box__submit__botao--desativado']]: !email
+							[styles['form__box__submit__botao--ativo']]: emailValido,
+							[styles['form__box__submit__botao--desativado']]: !emailValido
 						})}
-						disabled={true}
+						disabled={!emailValido}
 					>
 						Assine newsletter
 					</button>
